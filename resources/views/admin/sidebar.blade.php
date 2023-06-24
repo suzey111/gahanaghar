@@ -83,7 +83,7 @@
              </ul>
            </div>
          </li>
-
+ 
           <li class="nav-item menu-items">
             <a class="nav-link" href="{{url('view_category')}}">
               <span class="menu-icon">
