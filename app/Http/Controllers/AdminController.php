@@ -52,6 +52,11 @@ class AdminController extends Controller
     public function view_product()
     {
         $category=category::all();
+        return view('admin.view_product',compact('category'));
+    }
+    public function add_product_page()
+    {
+        $category=category::all();
         return view('admin.product',compact('category'));
     }
 

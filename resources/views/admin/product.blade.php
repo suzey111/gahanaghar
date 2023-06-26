@@ -54,6 +54,11 @@
             </div>
             @endif
             <div class="div_center">
+                    <div class="text-left">
+                        <a href="/view_product" class="btn btn-outline-primary text-white"> <i class="mdi mdi-arrow-left"></i> Back</a>
+                    </div>
+                </div>
+            <div class="div_center">
                 <h1 class="font_size">Add Product</h1>
 
             <form action="{{url('/add_product')}}" method="POST" enctype="multipart/form-data">
