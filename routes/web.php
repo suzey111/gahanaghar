@@ -36,3 +36,5 @@ route::get('/edit_category/{id}',[AdminController::class,'edit_category']);
 route::post('/update_category',[AdminController::class,'update_category']);
 route::get('/back',[AdminController::class,'return_back'])->name('back');
 
+route::get('/view_product',[AdminController::class,'view_product']);
+route::post('/add_product',[AdminController::class,'add_product']);

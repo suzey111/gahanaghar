@@ -65,23 +65,13 @@
       </a>
     </li>
     <li class="nav-item menu-items">
-      <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+      <a class="nav-link" href="{{url('/view_product')}}">
         <span class="menu-icon">
           <i class="mdi mdi-laptop"></i>
         </span>
         <span class="menu-title">Products</span>
         <i class="menu-arrow"></i>
       </a>
-      <div class="collapse" id="ui-basic">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item">
-            <a class="nav-link" href="/add-products">Add Products</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/show-products">Show Products</a>
-          </li>
-        </ul>
-      </div>
     </li>
 
     <li class="nav-item menu-items">
@@ -92,19 +82,6 @@
         <span class="menu-title">Category</span>
       </a>
     </li>
-    <li  class="nav-item menu-items">
-      <div class="card">
-        <div class="card-header">
-          <a class="btn" data-bs-toggle="collapse" href="#collapseOne">
-            Collapsible Group Item #1
-          </a>
-        </div>
-        <div id="collapseOne" class="collapse show" data-bs-parent="#accordion">
-          <div class="card-body">
-            Lorem ipsum..
-          </div>
-        </div>
-      </div>
-    </li>
+    
   </ul>
 </nav>
