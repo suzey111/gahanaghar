@@ -56,11 +56,13 @@
             </div>
             <table class="center">
               <tr>
+                <td>Category Id</td>
                 <td>Category Name</td>
                 <td>Action</td>
               </tr>
               @foreach($data as $data)
               <tr>
+              <td>{{$data->id}}</td>
                 <td>{{$data->category_name}}</td>
                 <td>
                   <a onclick="return confirm('Are you sure to Delete This?')" class="btn btn-danger" href="{{url('delete_category',$data->id)}}">Delete</a>

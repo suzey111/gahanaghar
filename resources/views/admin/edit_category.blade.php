@@ -41,7 +41,7 @@
         <!-- partial --> 
         <div class="main-panel">
           <div class="content-wrapper">
-          <a class="btn btn-secondary" height="5px" href="{{route('back')}}">Back</a>
+          <a class="btn btn-outline-primary text-white" height="5px" href="{{route('back')}}">Back</a>
             @if(session()->has('message'))
             <div class="alert alert-success">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>

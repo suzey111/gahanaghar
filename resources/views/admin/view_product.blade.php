@@ -7,29 +7,27 @@
 
     @include('admin.css')
     <style type="text/css">
-        .div_center {
-            text-align: center;
-            padding-top: 40px;
-        }
 
-        .font_size {
-            font-size: 40px;
-            padding-bottom: 40px;
-        }
+    .font_size
+    {
+        text-align: center;
+        font-size: 40px;
+        padding-top: 20px;
+    
+    }
+    
+    .img_size
+    {
+        width: 250px;
+        height: 250px;
+        
+    }
 
-        .text_color {
-            color: black;
-            padding-bottom: 20px;
-        }
+    .text_color
+    {
+        color: white;
+    }
 
-        label {
-            display: inline-block;
-            width: 200px;
-        }
-
-        .div_design {
-            padding-bottom: 15px;
-        }
     </style>
 
 </head>
@@ -43,6 +41,7 @@
         <!-- partial -->
         <div class="main-panel">
             <div class="content-wrapper">
+                <h2 class="font_size">All Products</h2>
                 @if(session()->has('message'))
                 <div class="alert alert-success">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
@@ -56,14 +55,38 @@
                 </div>
                 <div class="mt-3">
                     <table class="table">
-                        <thead>
-                            <tr>
-                                <td>S.N</td>
-                                <td>Product Name</td>
-                                <td>Price</td>
-                                <td></td>
-                            </tr>
-                        </thead>
+                        <tr class="text_color">
+                            <th>Product Id</th>
+                            <th>Product Title</th>
+                            <th>Description</th>
+                            <th>Quantity</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Discount Price</th>
+                            <th>Product Image</th>
+                            <th>Action</th>
+                        </tr>
+                        @foreach($products as $product)
+                        <tr>
+                        <td>{{$product->id}}</td>
+                        <td>{{$product->title}}</td>
+                        <td>{{$product->description}}</td>
+                        <td>{{$product->quantity}}</td>
+                        <td>{{$product->category}}</td>
+                        <td>{{$product->price}}</td>
+                        <td>{{$product->discount_price}}</td>
+                        <td>
+                            <img class="img_size" src="/product/{{$product->image}}">
+                        </td>
+
+                        <td>
+                            <a class="btn btn-danger" onclick="return confirm('Are you sure to Delete this?')" href="{{url('delete_product',$product->id)}}">Delete</a>
+                        </td>
+                        <td>
+                            <a class="btn btn-warning" href="{{url('update_product',$product->id)}}">Edit</a>
+                        </td>
+                        </tr>
+                        @endforeach
                         <tbody></tbody>
                     </table>
                 </div>
