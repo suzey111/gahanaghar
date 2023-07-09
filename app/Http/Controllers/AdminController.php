@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 
 use App\Models\Product;
+use App\Models\User;
 
 class AdminController extends Controller
 {
@@ -121,5 +122,19 @@ class AdminController extends Controller
         return redirect('/view_product');
 
 
+    }
+
+    public function storeAdmin(Request $request)
+    {
+        $admin = new User();
+        $admin->name = $request->name;
+        $admin->email = $request->email;
+        $admin->phone = $request->phone;
+        $admin->address = $request->address;
+        $admin->password = bcrypt($request->password);
+        $admin->usertype = 1;
+        $admin->save();
+        session()->flash('message','New admin created successfully');
+        return redirect()->back();
     }
 }
