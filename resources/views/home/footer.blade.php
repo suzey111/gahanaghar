@@ -21,7 +21,6 @@
                         <h3>Menu</h3>
                         <ul>
                            <li><a href="#">Home</a></li>
-                           <li><a href="#">About</a></li>
                            <li><a href="#">Services</a></li>
                            <li><a href="#">Review</a></li>
                            <li><a href="#">Contact</a></li>
