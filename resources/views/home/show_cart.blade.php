@@ -70,7 +70,7 @@
          <!-- end slider section -->
       
          <!-- why section -->
-            <div class="center">
+            < class="center">
                 <table>
                     <tr>
                         <th class="th_deg">product title</th>
@@ -98,6 +98,12 @@
                 <div>
                     <h1 class="total_deg">Total Price : Rs.{{$totalprice}}</h1>
                 </div>
+
+                
+                    
+                    
+                
+                
             </div>
 
       <!-- footer start -->
