@@ -51,10 +51,14 @@
 
         .total_deg
         {
-            font-size: 25px;
+            font-size: 30px;
             padding: 40px;
             color:red;
+            text-align: center;
+
         }
+
+        
       </style>
 
 
@@ -97,6 +101,7 @@
                 </table>
                 <div>
                     <h1 class="total_deg">Total Price : Rs.{{$totalprice}}</h1>
+                    
                 </div>
 
                 
