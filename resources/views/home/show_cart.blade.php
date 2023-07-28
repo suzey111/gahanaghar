@@ -70,7 +70,7 @@
          <!-- end slider section -->
       
          <!-- why section -->
-            < class="center">
+            
                 <table>
                     <tr>
                         <th class="th_deg">product title</th>
