@@ -16,16 +16,7 @@
                            </a>
                            <form action="{{url('add_cart',$products->id)}}" method="Post">
                               @csrf
-                              <div class="row">
-                                 <div class="col-md-4">
-                                 <input type="number" name="quantity" value="1" min="1" style="width: 100px" >
-                                 </div>
-
-                                 <div class="col-md-4">
-                                 <input type="submit" value="Add to cart">
-                                 </div>
-                     
-                              </div>
+                              
                               
                            </form>
                         </div>

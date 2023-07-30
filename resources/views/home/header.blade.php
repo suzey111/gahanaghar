@@ -16,10 +16,16 @@
                         <li class="nav-item">
                            <a class="nav-link" href="#footer">Contact</a>
                         </li>
+
+                        @auth
                         <li class="nav-item">
                            <a class="nav-link" href="{{url('show_cart')}}">Cart</a>
                         </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="{{route('myorders')}}">Orders</a>
+                        </li>
                         
+                        @endauth
                         
                        
                         @guest

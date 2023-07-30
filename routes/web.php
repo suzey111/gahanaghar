@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,3 +49,22 @@ route::get('/product_details/{id}',[HomeController::class,'product_details']);
 route::post('/add_cart/{id}',[HomeController::class,'add_cart']);
 route::get('/show_cart',[HomeController::class,'show_cart']);
 route::get('/remove_cart/{id}',[HomeController::class,'remove_cart']);
+
+
+
+
+    //Orders
+
+    Route::get('/myorders',[OrderController::class,'myorders'])->name('myorders');
+
+
+    Route::get('/order',[OrderController::class,'index'])->name('order.index');
+    Route::get('/order/{id}/edit',[OrderController::class,'edit'])->name('order.edit');
+    Route::post('/order/store',[OrderController::class,'store'])->name('order.store');
+
+    Route::post('/order/{id}/update',[OrderController::class,'update'])->name('order.update');
+    Route::get('/order/status/{id}/{status}',[OrderController::class,'status'])->name('order.status');
+    Route::get('/order/{id}/details',[OrderController::class,'details'])->name('order.details');
+
+    
+    Route::get('/myorders/{id}/items',[OrderController::class,'showorderitems'])->name('showorderitems');

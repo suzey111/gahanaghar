@@ -73,60 +73,44 @@
          
          <!-- end slider section -->
       
+         <h2>My Orders</h2>
+         <hr>
          <!-- why section -->
             
                 <table>
                     <tr>
-                        <th class="th_deg">product title</th>
-                        <th class="th_deg">quantity</th>
-                        <th class="th_deg">price</th>
-                        <th class="th_deg">Product Image</th>
+                        <th class="th_deg">Order date </th>
+                        <th class="th_deg">Amount</th>
+                        <th class="th_deg">Total Items</th>
+                        <th class="th_deg">Status</th>
                         <th class="th_deg">Action</th>
                     </tr>
 
                     <?php $totalprice=0; ?>
-                    @foreach($cart as $cart)
-                    <tr>
-                        <td>{{$cart->product_title}}</td>
-                        <td>{{$cart->quantity}}</td>
-                        <td>Rs.{{$cart->price}}</td>
-                        <td><img class="img_deg" src="/product/{{$cart->image}}"></td>
-                        <td>
-                            <a class="btn btn-outline-danger" onclick="return confirm('Are you sure to delete this product?')" href="{{url('remove_cart',$cart->id)}}">Delete</a></td>
+@forelse($orders as $order)
 
+                    <tr>
+                        <td class="td_deg"> {{ $order->order_date}} </td>
+                        <td class="td_deg">{{ $order->amount }}</td>
+
+                        @php
+
+$totalitems=explode(",",$order->amount);
+
+
+                        @endphp
+                        <td class="td_deg">{{ count($totalitems) }}</td>
+                        <td class="td_deg">{{ $order->status }}</td>
+                        <td class="td_deg"><a href="{{ route('showorderitems',$order->id )}}" class="btn btn-primary">Show items</a> </td>
                     </tr>
-                    <?php $totalprice=$totalprice + $cart->price ?>
-                    @endforeach
+                  
+                    @empty
+
+
+                    @endforelse
 
                 </table>
-                <div class="">
-                   <div>
-                   <h1 class="total_deg">Total Price : Rs.{{$totalprice}}</h1>
-                   </div>
-                    <center>
-                     <form action="{{ route('order.store') }}" method="post">
-                        @csrf
-                        <input type="hidden" name="amount" value="{{ $totalprice }}">
-                        <input type="text" name="shipping_address" value="{{ old('shipping_address') }}" placeholder="Shipping Address">
-                     @error('shipping_address')
-                     <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                     </span>
-                     @enderror
-
-                     <input type="number" name="phone" value="{{ old('phone') }}" placeholder="Phone Number">
-                     @error('phone')
-                     <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                     </span>
-                     @enderror
-
-                     <button class="btn btn-danger" type="submit">Order Now</button>
-                     </form>
-                    </center>
-                    
-                </div>
-
+              
                 
                     
                     

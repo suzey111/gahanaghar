@@ -82,7 +82,7 @@ class HomeController extends Controller
         if(Auth::id())
         {
             $id=Auth::user()->id;
-            $cart=cart::where('user_id','=',$id)->get();
+            $cart=cart::where('user_id','=',$id)->where('is_ordered',false)->get();
     
             return view('home.show_cart',compact('cart'));
         }
@@ -91,6 +91,20 @@ class HomeController extends Controller
             return redirect('login');
         }
        
+    }
+
+    public function checkout()
+    {
+        if(!auth()->user())
+        {
+            $itemsincart = 0;
+        }
+        else
+        {
+            $itemsincart = Cart::where('user_id',auth()->user()->id)->count();
+        }
+       
+        return view('myorders');
     }
 
     public function remove_cart($id)

@@ -2,6 +2,7 @@
 <html>
    <head>
       <!-- Basic -->
+      <base href="/public">
       <meta charset="utf-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <!-- Mobile Metas -->
@@ -19,6 +20,7 @@
       <!-- Custom styles for this template -->
       <link href="home/css/style.css" rel="stylesheet" />
       <!-- responsive style -->
+
       <link href="home/css/responsive.css" rel="stylesheet" />
 
       <style type="text/css">
@@ -73,60 +75,12 @@
          
          <!-- end slider section -->
       
+         <h2>Ordered Items</h2>
+         <hr>
          <!-- why section -->
             
-                <table>
-                    <tr>
-                        <th class="th_deg">product title</th>
-                        <th class="th_deg">quantity</th>
-                        <th class="th_deg">price</th>
-                        <th class="th_deg">Product Image</th>
-                        <th class="th_deg">Action</th>
-                    </tr>
-
-                    <?php $totalprice=0; ?>
-                    @foreach($cart as $cart)
-                    <tr>
-                        <td>{{$cart->product_title}}</td>
-                        <td>{{$cart->quantity}}</td>
-                        <td>Rs.{{$cart->price}}</td>
-                        <td><img class="img_deg" src="/product/{{$cart->image}}"></td>
-                        <td>
-                            <a class="btn btn-outline-danger" onclick="return confirm('Are you sure to delete this product?')" href="{{url('remove_cart',$cart->id)}}">Delete</a></td>
-
-                    </tr>
-                    <?php $totalprice=$totalprice + $cart->price ?>
-                    @endforeach
-
-                </table>
-                <div class="">
-                   <div>
-                   <h1 class="total_deg">Total Price : Rs.{{$totalprice}}</h1>
-                   </div>
-                    <center>
-                     <form action="{{ route('order.store') }}" method="post">
-                        @csrf
-                        <input type="hidden" name="amount" value="{{ $totalprice }}">
-                        <input type="text" name="shipping_address" value="{{ old('shipping_address') }}" placeholder="Shipping Address">
-                     @error('shipping_address')
-                     <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                     </span>
-                     @enderror
-
-                     <input type="number" name="phone" value="{{ old('phone') }}" placeholder="Phone Number">
-                     @error('phone')
-                     <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                     </span>
-                     @enderror
-
-                     <button class="btn btn-danger" type="submit">Order Now</button>
-                     </form>
-                    </center>
-                    
-                </div>
-
+             
+              <x-order-items orderid="{{ $orderid }}"  />
                 
                     
                     
