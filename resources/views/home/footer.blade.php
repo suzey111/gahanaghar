@@ -42,13 +42,14 @@
                         <div class="widget_menu">
                             <h3>Ask Question/Drop Your Review</h3>
                             <div class="form_sub">
-                                <form>
+                                <form action="/send-mail" method="POST">
+                                    @csrf
                                     <div class="form-group">
                                         <input type="email" class="form-control mb-0" id="email"
-                                            placeholder="Email" required>
+                                            placeholder="Email" required name="email">
                                     </div>
                                     <div class="form-group">
-                                        <textarea class="form-control" id="message" placeholder="Message" required style="min-height: 100px"></textarea>
+                                        <textarea class="form-control" id="message" placeholder="Message" required name="message" style="min-height: 100px"></textarea>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
