@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\MyMailer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Product;
 use App\Models\Cart;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -112,5 +114,19 @@ class HomeController extends Controller
           $cart=cart::find($id);
           $cart->delete();
           return redirect()->back();
+    }
+
+
+    public function sendMail(Request $request){
+        $details =[
+            "email" => $request->email,
+            "message" => $request->message,
+            "title" => "Message from " . $request -> email
+        ];
+        $admin = User::where('usertype',1)->select('email')->first();
+
+        Mail::to($admin['email'])->send(new MyMailer($details));
+
+        return redirect()->back()->with('message','Message sent successfully');
     }
 }
