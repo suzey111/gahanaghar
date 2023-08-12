@@ -18,13 +18,13 @@
                         </div>
                         <div class="detail-box">
                            <h5>
-                              Anna Trevor
+                              Priya Thapa
                            </h5>
                            <h6>
                               Customer
                            </h6>
                            <p>
-                              Dignissimos reprehenderit repellendus nobis error quibusdam? Atque animi sint unde quis reprehenderit, et, perspiciatis, debitis totam est deserunt eius officiis ipsum ducimus ad labore modi voluptatibus accusantium sapiente nam! Quaerat.
+                              WoW!
                            </p>
                         </div>
                      </div>
@@ -40,13 +40,13 @@
                         </div>
                         <div class="detail-box">
                            <h5>
-                              Anna Trevor
+                             Merina Bhusal
                            </h5>
                            <h6>
                               Customer
                            </h6>
                            <p>
-                              Dignissimos reprehenderit repellendus nobis error quibusdam? Atque animi sint unde quis reprehenderit, et, perspiciatis, debitis totam est deserunt eius officiis ipsum ducimus ad labore modi voluptatibus accusantium sapiente nam! Quaerat.
+                              Nice Product
                            </p>
                         </div>
                      </div>
@@ -62,13 +62,13 @@
                         </div>
                         <div class="detail-box">
                            <h5>
-                              Anna Trevor
+                              Puja Neupane
                            </h5>
                            <h6>
                               Customer
                            </h6>
                            <p>
-                              Dignissimos reprehenderit repellendus nobis error quibusdam? Atque animi sint unde quis reprehenderit, et, perspiciatis, debitis totam est deserunt eius officiis ipsum ducimus ad labore modi voluptatibus accusantium sapiente nam! Quaerat.
+                              Amazed with your product
                            </p>
                         </div>
                      </div>

@@ -129,4 +129,12 @@ class HomeController extends Controller
 
         return redirect()->back()->with('message','Message sent successfully');
     }
+
+    public function product_search(Request $request)
+    {
+        $search_text=$request->search;
+        $product=product::where('title','LIKE',"%$search_text%")->orwhere('category','LIKE',"$search_text")->paginate(6);
+        return view('home.userpage',compact('product'));
+
+    }
 }

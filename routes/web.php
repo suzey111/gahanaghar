@@ -74,3 +74,7 @@ Route::view('/admins', 'admin.admins')->name('admin.admins');
 Route::post('/storeadmin', [AdminController::class, 'storeAdmin'])->name('admin.store');
 
 Route::post('/send-mail', [HomeController::class, 'sendMail'])->name('admin.sendMail');
+
+//search
+
+Route::get('/product_search', [HomeController::class, 'product_search']);

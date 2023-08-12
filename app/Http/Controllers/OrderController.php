@@ -25,7 +25,7 @@ public function myorders(){
 
         $data = $request->validate([
             'shipping_address' => 'required',
-            'phone' => 'required'
+            'phone' => ['required','string','regex:/^9\d{9}$/']
         ]);
         $data['amount']=$request->amount;
 
