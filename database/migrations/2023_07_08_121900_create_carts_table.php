@@ -21,8 +21,8 @@ return new class extends Migration
             $table->string('price')->nullable();
             $table->string('quantity')->nullable();
             $table->string('image')->nullable();
-            $table->string('Product_id')->nullable();
-            $table->string('user_id')->nullable();
+            $table->foreignId('product_id')->constrained();    
+            $table->foreignId('user_id')->constrained();    
             $table->boolean('is_ordered')->default(false);
             $table->timestamps();
         });
